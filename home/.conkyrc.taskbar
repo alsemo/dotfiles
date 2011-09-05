@@ -1,0 +1,41 @@
+#########
+# My own conky config file
+#########
+
+#########
+# Configurations
+out_to_x no
+background no
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont DejaVu Sans Mono:size=8
+gap_x 5
+gap_y 60
+minimum_size 200 5
+net_avg_samples 2
+no_buffers yes
+out_to_console yes
+out_to_stderr no
+extra_newline no
+own_window no
+own_window_class Conky
+own_window_type desktop
+own_window_transparent yes
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+#########
+# Text to be displayed
+TEXT
+|  CPU: $cpu% ${freq_g}Ghz  |  Proc: $running_processes/$processes  |  RAM: ${membar 4} $memperc% $mem/$memmax  |  SWAP: ${swapbar 4} $swapperc% $swap/$swapmax  |  /home: ${fs_bar 4 /home} ${fs_used /home}/${fs_size /home}  |  bge0: ${upspeed bge0}ul/${downspeed bge0}dl  |  Bat: ${apm_battery_life}  |  AC: $apm_adapter

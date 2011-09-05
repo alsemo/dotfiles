@@ -1,0 +1,91 @@
+#########
+# My own conky config file
+#########
+
+#########
+# Configurations
+out_to_x yes
+alignment top_right
+background no
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont DejaVu Sans Mono:size=8
+gap_x 5
+gap_y 15
+minimum_size 150 0
+maximum_width 250
+net_avg_samples 2
+no_buffers yes
+double_buffer yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window no
+own_window_class Conky
+own_window_type normal
+own_window_transparent yes
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+#########
+# Text to be displayed
+TEXT
+${hr}
+${color grey}Date & Time ${color}${hr}
+${alignc}${font Syntax LT:size:36}${time %H:%M}${font}
+${alignc}${Time %A %d/%m/%Y}
+${hr}
+${color grey}Host ${color}${hr}
+${scroll 40 $nodename - $sysname $kernel on $machine}
+${color grey}Uptime: ${color}${uptime}
+${hr}
+${color grey}System ${color}${hr}
+${color grey}CPU: ${color}${freq_g}GHz ${alignr}${cpu}%
+${cpugraph}
+${color grey}RAM: ${alignr}${color}${mem}/${memmax}
+${memperc}% ${if_match ${memperc} <= 50}${color green}${else}${if_match ${memperc} <= 75}${color yellow}${else}${color red}${endif}${endif}${membar 8}
+${color grey}Swap: ${alignr}${color}${swap}/${swapmax}
+${swapperc}% ${if_match ${swapperc} <= 50}${color green}${else}${if_match ${swapperc} <= 75}${color yellow}${else}${color red}${endif}${endif}${swapbar 8}
+${color grey}Battery: ${color}${apm_battery_life} ${alignr}${color grey}AC: ${color}${apm_adapter}
+${hr}
+${color grey}Network ${color}${hr}
+${color grey}bge0: ${color}${addr bge0}
+${color grey} UL: ${color}${upspeed bge0} ${alignr}${color grey}Total: ${color}${totalup bge0}
+${color grey} DL: ${color}${downspeed bge0} ${alignr}${color grey}Total: ${color}${totaldown bge0}
+
+${color grey}ppp0: ${color}${addr ppp0}
+${color grey} UL:$color ${upspeed ppp0} ${alignr}${color grey}Total: ${color}${totalup ppp0}
+${color grey} DL:$color ${downspeed ppp0} ${alignr}${color grey}Total: ${color}${totaldown ppp0}
+
+${color grey}iwi0: ${color}${addr iwi0}
+${color grey} UL:$color ${upspeed iwi0} ${alignr}${color grey}Total: ${color}${totalup iwi0}
+${color grey} DL:$color ${downspeed iwi0} ${alignr}${color grey}Total: ${color}${totaldown iwi0}
+${hr}
+${color grey}Filesystem ${color}${hr}
+${color grey} / ${alignr}${color}${fs_used /}/${fs_size /}
+${fs_used_perc /}% ${if_match ${fs_used_perc /} <= 50}${color green}${else}${if_match ${fs_used_perc /} <= 75}${color yellow}${else}${color red}${endif}${endif}${fs_bar 8 /}
+${color grey} /home ${alignr}${color}${fs_used /home}/${fs_size /home}
+${fs_used_perc /home}% ${if_match ${fs_used_perc /home} <= 50}${color green}${else}${if_match ${fs_used_perc /home} <= 75}${color yellow}${else}${color red}${endif}${endif}${fs_bar 8 /home}
+${color grey} /var ${alignr}${color}${fs_used /var}/${fs_size /var}
+${fs_used_perc /var}% ${if_match ${fs_used_perc /var} <= 50}${color green}${else}${if_match ${fs_used_perc /var} <= 75}${color yellow}${else}${color red}${endif}${endif}${fs_bar 8 /var}
+${color grey} /usbdisk ${alignr}${color}${fs_used /mnt/usbdisk}/${fs_size /mnt/usbdisk}
+${fs_used_perc /mnt/usbdisk}% ${if_match ${fs_used_perc /mnt/usbdisk} <= 50}${color green}${else}${if_match ${fs_used_perc /mnt/usbdisk} <= 75}${color yellow}${else}${color red}${endif}${endif}${fs_bar 8 /mnt/usbdisk}
+${hr}
+${color grey}Processes $color$hr
+${color grey}Started: $color $processes  ${color grey}Running:$color $running_processes
+${color grey}Name              PID   CPU%   MEM%
+${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
