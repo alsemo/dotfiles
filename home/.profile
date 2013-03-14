@@ -27,8 +27,8 @@ alias mv='mv -i'
 export GIT_SSL_NO_VERIFY=true
 
 # Set up proxy
-export http_proxy="http://cbj-c-30002.asia-pac.shell.com:8080/"
-export ftp_proxy="http://cbj-c-30002.asia-pac.shell.com:8080/"
+export http_proxy="http://myproxy.com:8080/"
+export ftp_proxy="http://myproxy.com:8080/"
 export HTTP_PROXY=$http_proxy
 export FTP_PROXY=$ftp_proxy
 export https_proxy=$http_proxy
